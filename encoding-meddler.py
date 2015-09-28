@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import base64, string
+import sys, base64, string
 
 def IPVariants(ip):
     def f():
@@ -20,7 +20,7 @@ def ForbiddenCharacters(forbidden):
         return sum( e in forbidden for e in encoded )
     return judge
 
-execfile("config.py")
+execfile(len(sys.argv) > 1 and sys.argv[1] or "config.py")
 
 change_block_len = 3
 
