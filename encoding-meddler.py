@@ -43,7 +43,7 @@ def all_variants():
         count = count + 1
         
         for i in range(count):
-            variants["__MSPACE%i" % i] = [" " * j for j in range(1, magic_spaces)]
+            variants["__MSPACE%i" % i] = [" " * j for j in range(1 if i < (count-1) else 0, magic_spaces)]
     
     variables = variants.keys()
 
